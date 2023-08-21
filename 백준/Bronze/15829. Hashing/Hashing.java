@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Main {
@@ -7,11 +6,14 @@ public class Main {
 		
 		int num= sc.nextInt();
 		String str=sc.next();
-		int ans=0;
+		Long ans=0L;
+		int mod= 1234567891;
 		for(int i=0;i<num;i++) {
-			ans+=(str.charAt(i)-96)*Math.pow(31,i );
+			Long sca=(long) (str.charAt(i)-96);
+			Long pow=(long) Math.pow(31,i );
+			ans+= sca*pow%mod;
 		}
-		System.out.println(ans);
+		System.out.println(ans%mod);
 	}
 
 }
