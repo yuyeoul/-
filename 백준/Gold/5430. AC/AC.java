@@ -72,9 +72,7 @@ public class Main {
 				int flag = 1;
 				boolean tf = true;
 				// 실행 함수 D의 개수가 숫자의 수보다 많다면 error
-				if (dlist.size() > list.size()) {
-					bw.write("error"+"\n");
-				} else {
+				
 					for (int i = 0; i < arr.length; i++) {
 						//list안에 아무것도 없는데 D가 나온다면
 						if (list.size() == 0 && arr[i].equals("D")) {
@@ -113,7 +111,7 @@ public class Main {
 					} else {
 						bw.write("error"+"\n");
 					}
-				}
+				
 			}
 
 		}
