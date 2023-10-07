@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -7,24 +9,30 @@ public class Main {
 		int len=sc.nextInt();
 		String str = sc.next();
 		
-		int start=0;
 		int ans=0;
-		for(int i=start;i<len;i++) {
+		List<Integer> list =new ArrayList<>();
+		for(int i=0;i<len;i++) {
 			int cnt=0;
 			if(str.charAt(i)=='I') {
-				for(int j=i+1;j<=i+N*2;j+=2) {
-					if(j+1<len && str.charAt(j)=='O'&&str.charAt(j+1)=='I') {
+				while(true) {
+					if(i+2<len && str.charAt(i+1)=='O'&&str.charAt(i+2)=='I') {
 						cnt++;
+						i+=2;
 					}else {
 						break;
 					}
-					
 				}
 			}
-			if(cnt==N) {
-				ans++;
+			if(cnt!=0) {
+				list.add(cnt);
 			}
-			start=i;
+			
+		}
+		for(int i=0;i<list.size();i++) {
+			int cnt=(list.get(i)+1)-N;
+			if(cnt>0) {
+				ans+=cnt;
+			}
 		}
 		System.out.println(ans);
 	}
