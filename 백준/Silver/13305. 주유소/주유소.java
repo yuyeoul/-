@@ -5,8 +5,8 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N=sc.nextInt();
-		int cost[]=new int [N-1];
-		int city[]=new int [N];
+		long cost[]=new long [N-1];
+		long city[]=new long [N];
 		int min=Integer.MAX_VALUE;
 		int mini=0;
 		for(int i=0;i<N-1;i++) {
@@ -15,7 +15,7 @@ public class Main {
 		for(int i=0;i<N-1;i++) {
 			city[i]=sc.nextInt();
 			if(city[i]<min) {
-				min=city[i];
+				min=(int) city[i];
 				mini=i;
 			}
 		}
@@ -25,7 +25,7 @@ public class Main {
 				ans+=cost[i]*city[i];
 				i++;
 			}else {
-				int c=city[i];
+				long c=city[i];
 				long cnt=0;
 				while(true) {
 					cnt+=cost[i];
