@@ -12,17 +12,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         R = sc.nextInt();
         C = sc.nextInt();
-        arr = new int[R][C];
-        //방문 배열 편하게 탐색하기 위해 int로 배열값 채우기
-        for (int i = 0; i < R; i++) {
-            String str = sc.next();
-            for (int j = 0; j < C; j++) {
-                arr[i][j] = str.charAt(j) - 65;
+        if(R==1 && C==1){
+            System.out.println(1);
+        }else{
+            arr = new int[R][C];
+            //방문 배열 편하게 탐색하기 위해 int로 배열값 채우기
+            for (int i = 0; i < R; i++) {
+                String str = sc.next();
+                for (int j = 0; j < C; j++) {
+                    arr[i][j] = str.charAt(j) - 65;
+                }
             }
+            //dfs호출
+            dfs(0, 0, 0);
+            System.out.println(ans);
         }
-        //dfs호출
-        dfs(0, 0, 0);
-        System.out.println(ans);
+
 
     }
 
